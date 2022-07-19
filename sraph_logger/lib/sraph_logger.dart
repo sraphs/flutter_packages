@@ -1,4 +1,4 @@
-library s_log;
+library sraph_logger;
 
 export 'src/level.dart';
 export 'src/log_record.dart';

@@ -2,7 +2,7 @@ library slog_test;
 
 import 'dart:async';
 
-import 'package:s_log/s_log.dart';
+import 'package:sraph_logger/sraph_logger.dart';
 import 'package:test/test.dart';
 
 void main() {

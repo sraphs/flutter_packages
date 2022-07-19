@@ -1,10 +1,7 @@
 ## Initializing
 
 By default, the logging package does not do anything useful with the log
-messages. You must configure the logging level and add a handler for the log
-messages.
-
-Here is a simple logging configuration that logs all messages via `print`.
+messages. You must configure the logging level.
 
 ```dart
 Logger.root.level = Level.ALL; // defaults to Level.INFO
