@@ -4,11 +4,11 @@
 			"path": "."
 		},
 		{
-			"path": "sraph_logger"
+			"path": "sraph_cache"
 		},
 		{
-			"path": "sraph_cache"
-		}
+			"path": "sraph_logger"
+		},
 	],
 	"settings": {}
 }
