@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "sraph_logger"
+		},
+		{
+			"path": "sraph_cache"
+		}
+	],
+	"settings": {}
+}
