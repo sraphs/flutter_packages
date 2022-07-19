@@ -3,4 +3,4 @@ Flutter/Dart packages
 
 ## packages
 
-- [logging](https://pub.dev/packages/logging)
+- [s_log](https://pub.dev/packages/s_log)
