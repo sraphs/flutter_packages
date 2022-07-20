@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'dart:collection';
 
-import 'console_printer.dart';
+import 'log_printer.dart';
+import 'printers/console_printer.dart';
 import 'level.dart';
 import 'log_record.dart';
 
@@ -19,8 +20,8 @@ Level recordStackTraceAtLevel = Level.OFF;
 /// The default [Level].
 const defaultLevel = Level.INFO;
 
-/// The default printer.
-const defaultPrinter = ConsolePrinter();
+/// The default [LogPrinter].
+LogPrinter? defaultPrinter = ConsolePrinter();
 
 /// Use a [Logger] to log debug messages.
 ///
@@ -240,12 +241,14 @@ class Logger {
     }
   }
 
-  void _publish(LogRecord record) => _controller?.add(record);
+  void _publish(LogRecord record) {
+    _controller?.add(record);
+  }
 
   /// Top-level root [Logger].
   static final Logger root = Logger('')
-    ..onRecord.listen((record) {
-      defaultPrinter.log(record);
+    ..onRecord.listen((event) {
+      defaultPrinter?.log(event);
     });
 
   /// All attached [Logger]s in the system.
