@@ -1,6 +1,6 @@
 name: sraph_cache
 description: Flutter package for reading and writing simple key-value pairs.
-version: 1.0.0
+version: 1.0.1
 homepage: "https://github.com/sraphs/flutter_packages"
 
 environment:
