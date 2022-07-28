@@ -101,6 +101,11 @@ class Cache {
 
   /// Saves a T [value] to persistent storage in the background.
   static Future<bool> set<T>(String key, T? value) async {
+    if (value == null) {
+      remove(key);
+      return true;
+    }
+
     final adapter = instance._adapterRegistry.findAdapterForType(T);
     final isSuccessful = await adapter.setValue(instance._preferences, key, value);
     if (isSuccessful) {
