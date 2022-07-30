@@ -43,12 +43,15 @@ class ConsolePrinter extends LogPrinter {
   /// you wish to remove these wrapped calls from stack trace
   final int lineLength;
 
+  final int stackCount;
+
   String _topBorder = '';
   String _middleBorder = '';
   String _bottomBorder = '';
 
   ConsolePrinter({
     this.lineLength = 128,
+    this.stackCount = 8,
   }) {
     var doubleDividerLine = StringBuffer();
     var singleDividerLine = StringBuffer();
@@ -79,8 +82,12 @@ class ConsolePrinter extends LogPrinter {
 
     // Method stack history
     if (record.stackTrace != null) {
+      var count = 0;
       for (final line in record.stackTrace.toString().split('\n')) {
         print(color('$verticalLine $line'));
+        if (++count == stackCount) {
+          break;
+        }
       }
       print(color(_middleBorder));
     }
