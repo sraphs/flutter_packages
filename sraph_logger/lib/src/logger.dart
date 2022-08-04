@@ -153,7 +153,7 @@ class Logger {
   }
 
   /// Whether a message for [value]'s level is loggable in this logger.
-  bool shouldLogger(Level value) => (value >= level);
+  bool isLoggable(Level value) => (value >= level);
 
   /// Adds a log record for a [message] at a particular [logLevel] if
   /// `shouldLogger(logLevel)` is true.
@@ -174,7 +174,7 @@ class Logger {
   /// request if each HTTP request handler runs in it's own zone).
   void log(Level logLevel, Object? message, [Object? error, StackTrace? stackTrace, Zone? zone]) {
     Object? object;
-    if (shouldLogger(logLevel)) {
+    if (isLoggable(logLevel)) {
       if (message is Function) {
         message = (message as Object? Function())();
       }

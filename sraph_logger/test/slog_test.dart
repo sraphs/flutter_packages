@@ -340,11 +340,11 @@ void main() {
       c.level = Level.ALL;
       e.level = Level.OFF;
 
-      expect(root.shouldLogger(Level.ERROR), isTrue);
-      expect(root.shouldLogger(Level.WARNING), isFalse);
-      expect(c.shouldLogger(Level.DEBUG), isTrue);
-      expect(c.shouldLogger(Level.DEBUG), isTrue);
-      expect(e.shouldLogger(Level.ERROR), isFalse);
+      expect(root.isLoggable(Level.ERROR), isTrue);
+      expect(root.isLoggable(Level.WARNING), isFalse);
+      expect(c.isLoggable(Level.DEBUG), isTrue);
+      expect(c.isLoggable(Level.DEBUG), isTrue);
+      expect(e.isLoggable(Level.ERROR), isFalse);
     });
 
     test('add/remove handlers - no hierarchy', () {
